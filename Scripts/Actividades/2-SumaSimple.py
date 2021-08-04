@@ -1,6 +1,7 @@
 print("Aca empieza mi codigo de suma simple------------------")
 #asi se crea una variable numerica
 numero1 = 7
+print(id(numero1))
 #asi se imprime un texto con una variable
 print("El primer numero constante es:"+str(numero1))
 #asi se asigna a una variable una entrada de teclado
