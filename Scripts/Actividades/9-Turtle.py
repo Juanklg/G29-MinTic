@@ -1,4 +1,5 @@
 from turtle import *
+import random
 
 def CreateSol():
     color('red', 'yellow')
@@ -26,15 +27,29 @@ def polygono(nLados,longitud):
         lt(3)
         polygono(nLados, longitud-1)
 
+def branch(bl,angle):
+    angle=random.randint(18,28)
+    sf=random.uniform(0.6,0.8)
+    size=bl/10
+    pensize(size)
+    if bl > 5:
+        fd(bl)
+        lt(angle)
+        branch(sf*bl, angle)
+        rt(angle*2)
+        branch(sf*bl, angle)
+        lt(angle)
+        bk(bl)
+    else:
+        color('green')
+        stamp()
+        color("brown")
+
+#definicion de parametros
 inicioWindow = [-330,280]
-
-
-# import turtle
-
 #-----------------------------------------
-speed(300)
-
-up()#levantar el lapiz
-goto(inicioWindow)
-
+color("brown")
+lt(90)
+speed(600)
+branch(50, 45)
 done()#------------------------------------------
