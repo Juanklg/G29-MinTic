@@ -1,3 +1,6 @@
+"""
+9-08-2021
+"""
 from turtle import *
 import random
 
@@ -47,9 +50,11 @@ def branch(bl,angle):
 
 #definicion de parametros
 inicioWindow = [-330,280]
-#-----------------------------------------
+
+#Programa para el arbol---------------------------
 color("brown")
 lt(90)
 speed(600)
 branch(50, 45)
-done()#------------------------------------------
+#-------------------------------------------------
+done()
