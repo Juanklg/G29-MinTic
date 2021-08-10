@@ -25,4 +25,6 @@ def robotSquare():
         print("El robot ha terminado")
             
 robotSquare()
+
+done()
             
