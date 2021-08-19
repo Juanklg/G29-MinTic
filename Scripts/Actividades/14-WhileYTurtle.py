@@ -12,8 +12,9 @@ def movimientos():
         elif letra=="d": rt(45)
         elif letra=="i": lt(45)
         elif letra=="u": up()
-        elif letra=="w": pd()
+        elif letra=="w": pd()        
         else: print("Esta letra no tiene un movimiento asignado")
+        print(distance(200,20))
         print("Introduzca letra para el movimiento (ex para salir)")
         letra = input()
     else:
