@@ -20,3 +20,22 @@ for valor in miRange:
 
 for caracter in texto:
     print(caracter)
+
+def detailVar(var:any):
+    print("El valor es :",var)
+    print("Es de tipo :",type(var))
+    print("Su longitud es :",len(var))
+    for x in var:
+        # if x==7:break
+        print("El valor que toma x en el for es :",x)
+    return 
+
+# Los int no son iterables
+var = 567986
+detailVar(var)
+#para iterar un int debemos convertirlo con str
+var = 567986
+detailVar(str(var))
+#los str si son iterables
+text = "Hola fundamentos de programacion Hola, Grupo 29 Hola"
+detailVar(var)
