@@ -1,4 +1,4 @@
-#asi se define una funcion
+#asi se define una funcion de la linea 2 a la linea 17
 def dentroDelRango(v:int,vm=5,vM=35)->str:
     res = None
     #esta validacion retorna un true o un false

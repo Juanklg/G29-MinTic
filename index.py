@@ -1,6 +1,8 @@
 #Primer script que corre mi aplicacion
 
-#Variables (int,float,str,bool,range,list,dict,tuple)
+#Variables (int,float,str,bool)
+#iterables o colecciones = {range,list,tuple,dict,set}
+
 #funciones -> Fun.propias, Fun.python
 #bucles (while,for)
 
@@ -26,54 +28,113 @@ isLogin(user)
 ## solo se ejecuta esto si el usuario es = 'Login'
 print("Inicia la App")
 
-## asi es una lista
-lista = []
-#asi se crea un diccionario
-miDiccionario = {}
-miDiccionarioConstructor = dict()
-miDiccionarioConstructor = dict(copia=123.23)
-miDiccionario = {"total":55,"descuento":True,"num":"15"}
+def detailArch(el):
+    print('---------------------------------')
+    print(el)
+    print("len = ",len(el))
+    for x in range(len(el)):
+        print(f"Pos : {x} - Elemento : {el[x]}")
+    # for x in el:
+    #     print(f"Elemento : {x}")
 
-miDiccionario = {"total":55,"descuento":True,15:"15"}
-miDiccionarioConstructor = dict(nombre=5+2,telefono=3514647,edad=33,ciudad="Bogota",num="15")
+def buscarYeliminar(lista,parametro):
+    pos = lista.index(parametro)
+    lista.pop(pos)
+    return lista
 
-usuario = {
-    "nombre":"Nombre del usuario",
-    "edad":23,
-    "curso":"Curso de python",
-    "skills":{
-        "Programacion":True,
-        "BaseDeDatos":False
-    },
-    "numMedallas":10,
-}
+#comparacion de estructuras de datos
+lista = ['Juan','Karla','Ricardo', 'María']
+tupla = ('Naranja', 'Plátano', 'Guayaba')
+conjunto = {'Marte', 'Júpiter', 'Venus'}
 
-print(usuario['curso'])
+#imprimir elementos
+# detailArch(lista)
+# detailArch(tupla)
+# detailArch(conjunto)
 
-# Asi actualizamos uno de los valores de las llaves de un diccionario
-usuario['curso']="Fundamentos de programacion"
-usuario['nombre']="Juan"
-# print(usuario['curso'])
+#el conjunto no permite indexacion
+# print(lista[1])
+# print(lista[-1])
+# print(tupla[1])
+# print(tupla[-1])
 
-print(dir(usuario))
+#validar si existe dentro de la estructura
+# print('Karla' in lista)
+# print('Plátano' in tupla)
+# print('Marte' in conjunto)
 
-print("get",usuario.get("nombre"))
-print("items",usuario.items())
-print("keys",usuario.keys())
-print("pop",usuario.pop("skills"))
-print("values",usuario.values())
-print("update",usuario.update(grupo=29))
-print(usuario)
-copiausuario = usuario.copy()
+#verificar metodos comunes
+detailArch(lista)
+lista.append('Ashley')  # append
+lista.insert(1,'Juan')  # insert
+print('Cuantas veces esta juan =',lista.count('Juan')) # count
 
-# limpiar
-print("clear",usuario.clear())
-# eliminar el diccionario
-del usuario
-print(usuario)
+grupo29 = (
+    'Ana',
+    'Dayana',
+    'Juan D',
+    'Kevin',
+    'Mateo',
+    'Paulina',
+    'Samuel',
+    'Santiago',
+    'Tomas'
+)
+detailArch(grupo29)
+print('Buscando index en pos :',grupo29.index('Paulina'))
+print('Count con la tupla : ',grupo29.count('Kevin')) # count
 
-sec = ('python','zope','plone')
-ver = dict(sec)
-detailVar(ver)
-# detailVar(miDiccionarioConstructor)
+#convertimos a tupla del grupo 29 en una lista
+ListGrupo29 = list(grupo29)
+
+detailArch(ListGrupo29)
+#lista orignal de estudiantes
+detailArch(lista)
+#la lista original le agrega la informacion de la lista del grupo 29
+lista.extend(ListGrupo29)#extend
+detailArch(lista)
+# Antes de organizar la lista la invertimos manteniendo su posicion de ingreso
+lista.reverse()
+detailArch(lista)
+#la lista la vamos a organizar
+lista.sort(reverse=True)
+detailArch(lista)
+lista.sort()
+detailArch(lista)
+
+# ahora usamos el'remove' que elimina el primer elemento q encuentra con ese nombre
+lista.remove('Juan')
+detailArch(lista)
+#Buscamos a Juan para sacarlo de la lista
+posJuan = lista.index('Juan')
+print('Donde esta Juan',posJuan)
+#aplicar el pop y elminar el ultimo de la lista si sepa alimpio o el indice se se pasa
+lista.pop(posJuan)
+detailArch(lista)
+#usamos una funcion para buscar y elominar
+lista=buscarYeliminar(lista,'Karla')
+lista=buscarYeliminar(lista,'María')
+detailArch(lista)
+# clear
+lista.clear()
+detailArch(lista)
+
+#con al tupla puedo captura los elementos con un desembalaje
+fruits = ("apple", "banana",  "cherry", "strawberry", "raspberry")
+print(fruits)
+
+(princ, *secun, penultimo,ultimo) = fruits
+
+print(princ)
+print(secun)
+print(penultimo)
+print(ultimo)
+
+thislist = ["apple", "banana", "cherry"]
+thislist[1:3] = ["watermelon"]
+print(thislist)
+
+# 'add', 'clear', 'copy', 'difference', 'difference_update', 'discard', 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference', 'symmetric_difference_update', 'union', 'update'
+
+
 
