@@ -41,3 +41,8 @@ def isLogin(user)->bool:
         print("Usuario no esta logueado, Chao")
         exit()
     return 
+
+def printMenu(el):
+    print('---------------------------------')    
+    for i,e in zip(range(1,len(el)+1),el):
+        print(f"\t{i} - {e}")
