@@ -129,7 +129,7 @@ def menuOriginal(rut):
                 datosActualizados[ 'estado']='Por aprobar' 
             elif estadoNuevo=='5': 
                 now = datetime.now() 
-                datosActualizados['estado']='Finalizada' 
+                datosActualizados['estado']='Finalizada'
                 datosActualizados['fecha finalizacion']=str(now.day) +'/'+ str(now.month) +'/'+str(now.year) 
                 
             now = datetime.now() 
@@ -157,3 +157,9 @@ def menuOriginal(rut):
             print('* ELiminar Tarea **') 
             iden=int(input('Indique el Id de la tarea que desea eliminar: '))
             crud.borrar(rut, iden)
+
+if __name__=="__main__":
+    rut = r"C:\Users\MakeDream\Desktop\Ruta1\G29-MinTic\dbTask.xlsx"
+    menuOriginal(rut)
+else:
+    print("Esto es la dunder name desde funciones = ",__name__)

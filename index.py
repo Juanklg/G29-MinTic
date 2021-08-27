@@ -1,17 +1,29 @@
-# import funciones
-# print(dir(funciones))
+from flask import Flask, render_template
 from funciones import isLogin, menuOriginal
 # from funciones as fn
-
-import crud
-
+# print(dir(funciones))
 isLogin("Login")
-#------------------------------------------------------
 ## solo se ejecuta esto si el usuario es = 'Login'
 print("Inicia la App")
+#------------------------------------------------------
+print("Esto es la dunder name = ",__name__)
 
-rut = r"C:\Users\MakeDream\Desktop\Ruta1\G29-MinTic\dbTask.xlsx"
-menuOriginal(rut)
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Hola Grupo 29</p>"
+
+@app.route("/index")
+def index():
+    return render_template("index.html")
+
+    print("Test")
+
+app.run(debug=True)
+# app.run(port=3000)
+
+#------------------------------------------------------
 
 
 
