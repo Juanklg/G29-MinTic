@@ -11,7 +11,7 @@ def detailArch(el):
     print(el)
     print("len = ",len(el))
     for x in range(len(el)):
-        print(f"Pos : {x} - Elemento : {el[x]}")
+        print("Pos : "+x+" - Elemento : "+el[x])
     # for x in el:
     #     print(f"Elemento : {x}")
 
@@ -22,16 +22,16 @@ def detailArchZip(el):
 
     for i,valor in zip(range(len(el)),el):
         # print(i,valor)
-        print(f"{i} - Elemento : {valor}")
+        print("Pos : "+i+" - Elemento : "+valor)        
     # for x in el:
     #     print(f"Elemento : {x}")
 
-def detailVar(var:any):
+def detailVar(var):
     print("El valor es :",var)
     print("Es de tipo :",type(var))
     print("Su longitud es :",len(var))
 
-def isLogin(user)->bool:
+def isLogin(user):
     login = None
     if user=="Login":
         login = True
@@ -45,7 +45,7 @@ def isLogin(user)->bool:
 def printMenu(el):
     print('---------------------------------')    
     for i,e in zip(range(1,len(el)+1),el):
-        print(f"\t{i} - {e}")
+        print("Pos : "+i+" - Elemento : "+e)        
 
 def menuOriginal(rut):
     datosActualizados = {
@@ -61,8 +61,7 @@ def menuOriginal(rut):
         print('\t 2-Actualizar')
         print('\t 3-Crear nueva tarea')
         print('\t 4-Borrar')
-        accion = input('Escriba la opccion: ')
-
+        accion = str(input('Escriba la opccion: '))
         if not(accion=="1") and not(accion=="2") and not(accion=="3") and not(accion=="4"):
             print('Comando invalido por favor eliga una opcion valida')
         elif accion=='1': 
@@ -73,7 +72,7 @@ def menuOriginal(rut):
             print('\t 3-En ejecucion') 
             print('\t 4-Por aprobar') 
             print('\t 5-Finalizada') 
-            opc_consulta = input('Digite las tareas que desea consultar: ')
+            opc_consulta = str(input('Digite las tareas que desea consultar: '))
             print("Consulta",opc_consulta)
             if opc_consulta=='1': 
                 print() 
@@ -108,7 +107,9 @@ def menuOriginal(rut):
             print() 
             print('* Nuevo titulo *') 
             print('*Nota: si no desea actualizar el titulo solo oprima ENTER') 
-            datosActualizados['titulo']=input('Indique el nuevo titulo de la tarea : ') 
+            titulot = input('Indique el nuevo titulo de la tarea : ') 
+            print(titulot)
+            # datosActualizados['titulo']=
             print() 
             print('* Nueva descripcion *') 
             print('Nota: si no desea actualizar la descripcion solo oprima ENTER') 
