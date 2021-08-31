@@ -159,8 +159,10 @@ def menuOriginal(rut):
             iden=int(input('Indique el Id de la tarea que desea eliminar: '))
             crud.borrar(rut, iden)
 
+
+
 if __name__=="__main__":
     rut = r"C:\Users\MakeDream\Desktop\Ruta1\G29-MinTic\dbTask.xlsx"
     menuOriginal(rut)
 else:
-    print("Esto es la dunder name desde funciones = ",__name__)
+    print("Ejecutando funciones desde segundo plano con el nombre de ",__name__)

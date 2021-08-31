@@ -81,11 +81,25 @@ print(nv)
 #con la funcion dir puedo ver las funciones q puedo utilizar con esa variable
 # print(dir(text))
 
-hexadecimal = 0x31
-nv = "El valor de var es = %x" %hexadecimal
+hexadecimal = 15
 #caracteres especiales
 nv = "El valor de \tvar es = %x" %hexadecimal
 nv = "El valor de \nvar es = %x" %hexadecimal
+
+nv = "El valor de var es = %X" %hexadecimal
+print(nv)
+meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+for mes in meses:
+    print("* %10s * %-10s *" %(mes,mes))
+
+print('Titulo'.center(50,'-'))
+
+flotante = 1/3
+varTextoformateada = "El resulatdo del flotantes es %f pero formateado es %.2f"%(flotante,flotante)
+print(varTextoformateada)
+
+
+
 
 #contador de busqueda
 nv=text
