@@ -13,12 +13,16 @@ def index():
 
 @app.route("/proy")
 def proyJuan():
+    cte=fn.consultarConstantes()
     print('Ejecutando este evento'.center(50,'-'))
-    return render_template("index.html",usuario='usuario',proyecto='proyecto palabras')
+    redes = fn.consultarRedes()
+    print(type(redes))
+    # return render_template("index.html")
+    return render_template("index.html",usuario='Wendy',proyecto='proyecto palabras',data=redes,cte=cte)
 
 @app.route("/proy/<usuario>")
 def proy(usuario):
-    proyecto = fn.consultarProyecto(usuario)    
+    proyecto = fn.consultarProyecto(usuario)
     print('Ejecutando este evento'.center(50,'-'))
     return render_template("index.html",usuario=usuario,proyecto=proyecto)
 
