@@ -1,0 +1,10 @@
+puedo ver las ramas existentes con el siguiente comando:
+git branch
+puedo crear una nueva rama con el siguiente comando:
+git branch guia
+puedo cambiarde rama con el siguiente comando:
+git checkout guia
+
+
+tarea = crear una rama personal para desarrollar , propongo (dev)
+Agregando graficas de la clase 8 de seccion 1.4
