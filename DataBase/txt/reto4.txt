@@ -1,0 +1,96 @@
+crear una funcion que leaa el archivo csv
+crear un data frame con lo leido en el archivo csv
+filtar las columnas necesarias pare la estadistica solicitada
+reparacion de informacion en columna del sexo
+retornar la siguiente informacion en diccionarios dentro de una lista de la siguiente forma:
+[ Diccionario1, Diccionario2, Diccionario3]
+
+-Promedio de porcentaje de infectados masculinos y femeninos
+    Ejemplo: {F: 55.5, M: 44.5}
+-Promedio de edades de los infectados por departamentos
+    Ejemplo: {Antioquía: 23.4554, Risaralda: 35.33, Amazonas: 31.4432}
+-Porcentaje de la procedencia de los infectados
+    Ejemplo {España: 20.32, Ecuador: 53.33, Francia: 26.35}
+
+def casos(ruta_archivo: str)-> dict:
+ pass
+
+[
+{
+    'F': 45.01,
+    'M': 54.99
+},
+{
+    'Amazonas': 38.4545,
+    'Antioquia': 40.5,
+    'Archipiélago de San Andrés Providencia y Santa Catalina': 44.6667,
+    'Atlántico': 37.3636,
+    'Barranquilla D.E.': 39.2708,
+    'Bogotá D.C.': 40.8306,
+    'Bolívar': 47.2308,
+    'Boyacá': 43.2459,
+    'Buenaventura D.E.': 39.9615,
+    'Caldas': 40.2553,
+    'Caquetá': 37.3333,
+    'Cartagena D.T. y C.': 42.5385,
+    'Casanare': 37.8,
+    'Cauca': 40.5122,
+    'Cesar': 39.9143,
+    'Chocó': 40.4444,
+    'Cundinamarca': 38.5761,
+    'Córdoba': 43.6129,
+    'Huila': 46.5714,
+    'La Guajira': 41.7333,
+    'Magdalena': 37.8429,
+    'Meta': 35.7033,
+    'Nariño': 37.8577,
+    'Norte de Santander': 43.2444,
+    'Quindío': 44.1692,
+    'Risaralda': 38.8411,
+    'Santa Marta D.T. y C.': 43.8095,
+    'Santander': 41.3, 'Sucre': 28.0,
+    'Tolima': 35.3592,
+    'Valle del Cauca': 41.641
+},
+{
+    'ALEMANIA': 1.23,
+    'ANTILLAS NEERLANDESAS': 0.984,
+    'ARABIA SAUDÍ': 0.123,
+    'ARGENTINA': 0.369,
+    'ARUBA': 0.369,
+    'AUSTRALIA': 0.123,
+    'BRASIL': 4.428,
+    'BÉLGICA': 0.123,
+    'CANADÁ': 0.369,
+    'CHILE': 0.738,
+    'COSTA RICA': 0.246,
+    'CROACIA': 0.123,
+    'CUBA': 0.492,
+    'ECUADOR': 5.9041,
+    'EGIPTO': 1.353,
+    'EMIRATOS ARABES UNIDOS': 0.123,
+    'ESPAÑA': 31.3653,
+    'ESTADOS UNIDOS': 24.7232,
+    'ESTADOS UNIDOS DE AMÉRICA': 0.123,
+    'FRANCIA': 2.091,
+    'GRECIA': 0.492,
+    'GUATEMALA': 0.123,
+    'HONDURAS': 0.123,
+    'IRLANDA': 0.123,
+    'ISRAEL': 0.738,
+    'ITALIA': 1.107,
+    'JAMAICA': 1.968,
+    'KENYA': 0.123,
+    'MARRUECOS': 0.246,
+    'MÉXICO': 5.5351,
+    'PANAMA': 4.182,
+    'PERU': 1.23,
+    'PUERTO RICO': 1.599,
+    'REINO UNIDO DE GRAN BRETAÑA E IRLANDA DEL NORTE': 1.722,
+    'REPÚBLICA DOMINICANA': 1.107,
+    'SUECIA': 0.123,
+    'SUIZA': 0.123,
+    'TURQUÍA': 3.321,
+    'URUGUAY': 0.123,
+    'VENEZUELA': 0.492
+}]
