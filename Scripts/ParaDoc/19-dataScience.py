@@ -105,7 +105,7 @@ s = pd.Series([3, 1, 2, 1, 1, 4, 1, 2, np.nan])
 print(s)
 print(s.value_counts(dropna=False))#dropna false incluye los NaN
 print("Metodo value_counts bins".center(60,'-'))
-print(s.value_counts())
+print(s.value_counts(normalize=True,sort=True))
 print(s.value_counts(bins = 2))
 
 print("Series uso de rango".center(60,'-'))

@@ -1,9 +1,9 @@
-crear una funcion que leaa el archivo csv
+crear una funcion que lea el archivo csv
 crear un data frame con lo leido en el archivo csv
-filtar las columnas necesarias pare la estadistica solicitada
+filtar las columnas necesarias para la estadistica solicitada
 reparacion de informacion en columna del sexo
 retornar la siguiente informacion en diccionarios dentro de una lista de la siguiente forma:
-[ Diccionario1, Diccionario2, Diccionario3]
+
 
 -Promedio de porcentaje de infectados masculinos y femeninos
     Ejemplo: {F: 55.5, M: 44.5}
@@ -11,9 +11,6 @@ retornar la siguiente informacion en diccionarios dentro de una lista de la sigu
     Ejemplo: {Antioquía: 23.4554, Risaralda: 35.33, Amazonas: 31.4432}
 -Porcentaje de la procedencia de los infectados
     Ejemplo {España: 20.32, Ecuador: 53.33, Francia: 26.35}
-
-def casos(ruta_archivo: str)-> dict:
- pass
 
 [
 {
