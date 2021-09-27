@@ -1,0 +1,75 @@
+/* Selectores de elemento */
+body {
+    background-color: darkgrey;
+}
+
+h1 {
+    color: blueviolet;
+    font-size: 2em;
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+h2{
+    background-color: deeppink;
+}
+
+aside{
+    /* float: right; */
+    background-color: lightcoral;
+    max-width: 250px;
+    padding: 20px;
+}
+
+main{
+    /* float: left; */
+    background-color: bisque;
+    padding: 20px;
+}
+
+footer{
+    clear: left;
+    text-align: center; 
+    padding: 50px;
+    background-color: dimgrey;
+}
+
+header{
+
+}
+
+.posFloat{
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;    
+    height: 200px;
+    border: 5px solid orangered;
+}
+
+.posFloat img{
+    max-width: 150px;
+    float: left;    
+    margin: 20px;
+}
+
+.posFloat a{
+    margin: 10px;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

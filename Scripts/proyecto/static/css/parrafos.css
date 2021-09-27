@@ -1,0 +1,14 @@
+
+/* Selectores por clases */
+.libres {
+    max-width: 500px;
+}
+
+.espacios {
+    margin: auto;
+    margin-top: 50px;
+}
+
+.pInicial {
+    background-color: cyan;
+}

@@ -1,0 +1,47 @@
+{% extends "layouts/layout.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="static/css/img.css">
+{% endblock %}
+{% block title %} Formularios {{nombre}} {% endblock %}
+
+{% block content %}
+<h2>Hover Menu</h2>
+<figure class="hover-menu">
+    <img src="static/perrito.jpg" />
+    <div>
+        <a href="#">Home</a>
+        <a href="#">Pricing</a>
+        <a href="#">About</a>
+    </div>
+</figure>
+<h2 title="Este ss el titulo de las imagenes" id="secImg">Imagenes</h2>
+<img class="imagenes" src="static/perrito.jpg" alt="Perrito">
+<h2 id="secImg">Carousel</h2>
+<div class="slider">
+
+    <a href="#slide-1">1</a>
+    <a href="#slide-2">2</a>
+    <a href="#slide-3">3</a>
+    <a href="#slide-4">4</a>
+    <a href="#slide-5">5</a>
+
+    <div class="slides">
+        <div id="slide-1">
+            1
+        </div>
+        <div id="slide-2">
+            2
+        </div>
+        <div id="slide-3">
+            3
+        </div>
+        <div id="slide-4">
+            4
+        </div>
+        <div id="slide-5">
+            5
+        </div>
+    </div>
+</div>
+{% endblock %}

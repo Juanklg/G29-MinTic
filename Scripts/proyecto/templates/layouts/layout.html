@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="html, css, python, javascript" />
+    <meta name="description" content="Exploramos el contenido basico de html y css" />
+    <meta name="author" content="https://github.com/Juanklg" />
+    <link rel="icon" type="image/x-icon" href="" />
+    
+    <link rel="stylesheet" href="static/css/global.css">
+    <title>{% block title %}{% endblock %}</title>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <header>
+        <div class="posFloat">
+            <img src="static/perrito.jpg" alt="Perrito">
+            <a href="/contenido?page=form" >Formularios</a>
+            <a href="/contenido?page=img" >Imagenes</a>
+            <a href="/contenido?page=font" >Fonts</a>
+            <a ping="/contenido" href="#secListas">Listas</a>
+            <a ping="/contenido" href="#secParrafos">Parrafos</a>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        <p>Author: Juan Linares</p>
+        <p><a href="mailto:juanlinares.ruta1@utp.edu.co">juanlinares.ruta1@utp.edu.co</a></p>
+    </footer>
+</body>
+
+</html>

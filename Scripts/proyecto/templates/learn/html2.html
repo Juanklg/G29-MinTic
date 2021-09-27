@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="html, css, python, javascript" />
+    <meta name="description" content="Exploramos el contenido basico de html y css" />
+    <meta name="author" content="https://github.com/Juanklg" />
+    <link rel="icon" type="image/x-icon" href="" />
+    <title>Explorando Html parte 2</title>
+    <link rel="stylesheet" href="static/css/global.css">
+    <link rel="stylesheet" href="static/css/selectores.css">
+    <link rel="stylesheet" href="static/css/boxmodel.css">
+
+</head>
+
+<body>
+    <header>
+        <h1 onclick="alert('Usted hizo click en el titulo principal')">Explorando HTML y CSS parte 2</h1>
+        <nav>
+            <a id="home" href="#pInicial">Primer parrafo</a>
+        </nav>
+    </header>
+
+
+
+    <aside>
+        <h5>Bucando hermano h6 proximo</h5>
+        <h6>Hermano h6</h6>
+        <h5>Stylo ha hermanos</h5>
+        <h5>Stylo ha hermanos</h5>
+        <table>
+            <colgroup>
+                <col style="background-color: yellow;">
+                <col style="background-color: blue;">
+                <col style="background-color: red;">
+            </colgroup>
+            <caption>Ejemplo de Tabla</caption>
+            <thead>
+                <tr>
+                    <th>Titulo 1</th>
+                    <th>Titulo 2</th>
+                    <th>Titulo 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Celda 1</td>
+                    <td>Celda 2</td>
+                    <td>Celda 3</td>
+                </tr>
+                <tr>
+                    <td>Celda 4</td>
+                    <td>Celda 5</td>
+                    <td>Celda 6</td>
+                </tr>
+                <tr>
+                    <td>Celda 7</td>
+                    <td>Celda 8</td>
+                    <td>Celda 9</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Pie 1</td>
+                    <td>Pie 2</td>
+                    <td>Pie 3</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div>
+            <div class="box1">Contenido</div>
+            <div class="box2">Contenido</div>
+        </div>
+    </aside>
+
+    <main>
+        <h2>Position reletive</h2>
+        <div>
+            <div class="relative-1">Relativo 1</div>
+            <div class="relative-2">Relativo 2</div>
+        </div>
+        <h2>Position Absoluto</h2>
+        <div class="posAbs">
+            <div class="absolute-1">Absolute 1</div>
+            <div class="absolute-2">Absolute 2</div>
+        </div>
+        <h2>Position Fixed(Fijo)</h2>
+        <span>El fixed permite asigna cordenadas de tipo t,r,b,l que seran represnetadas en las dimensiones de la
+            pantalla</span>
+        <div class="posFixed">Elemento Fijo</div>
+
+        <h2>Position sticky</h2>
+        <div class="posSticky">Menu</div>
+
+        <h2 title="Este es el titulo de las listas" id="secListas">Listas</h2>
+        <ol>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+        </ol>
+        <ul>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+        </ul>
+
+        <h2 id="secParrafos">Parrafos</h2>
+        <div class="parrafo-center-border border bg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis quos alias mollitia fugiat delectus
+                porro ex inventore voluptatibus repellendus ad, unde enim sequi quaerat quidem omnis maiores facere!
+                Cupiditate, itaque.</p>
+        </div>
+        <p class="parrafos libres pInicial" id="pInicial">
+            En este texto vamos a mostar las diferentes etiquetas que podemos utilizar dentro de los parrafos o de
+            cualquier etiqueta de texto.
+            la primera es <strong>Strong</strong>, se usa para indicar que un texto o parte de un párrafo es importante.
+            la segunda es time se usa para indicar que el texto hace referencia a una fecha <time>16/09/2021</time>
+            <a href="#home">Volver al inicio</a>
+        </p>
+        <div class="espacios" style="border: 5px;border-radius: 5px;border-style: dashed; max-width: 600px;">
+            <p dir="rtl">
+                En este parrafo vemos etiquetas para el texto que no relsatan informacion importante pero si modifican
+                la forma en la que se ve
+                el texto en la pagina, mostraremos algunos.<br><br>
+                La etiqueta b : <b>coloca el texto en negrita</b>.<br>
+                La etiqueta u : <u>subraya el texto</u>.<br>
+                El br que hace un salto de linea<br>
+                La etiqueta i : <i>es una etiqueta coloca el texto en cursiva</i><br>
+                La etiqueta q : <q>representa una cita textual entre comillas</q><br>
+                La etiqueta a : que genera un link a otra pagina u otro recurso con un nombre especifico <a
+                    href="https://www.youtube.com/">youtube</a>
+            </p>
+        </div>
+    </main>
+
+</body>
+
+</html>

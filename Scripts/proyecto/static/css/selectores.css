@@ -1,0 +1,63 @@
+/* Selectores universales */
+*{
+    /* color: whitesmoke; */
+}
+
+/* Selectores por atributos */
+[for]{
+    border: 3px solid blue;
+}
+[type='text']{
+    border-color: blue;
+}
+
+/* por seleccion de atributos multiples */
+[class~='border']{
+    border-style: double;
+    border-radius: 5px;
+}
+
+[class|='parrafo']{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+[class^='parrafo']{
+    font-style: italic;    
+}
+
+[class $= 'bg']{
+    background-color: darkolivegreen;
+}
+
+[class *='center']{
+    text-align: center;
+}
+
+/* Selectores combinadores */
+h5 + h6{
+    color: red;
+}
+
+h6 ~ h5{
+    color: green;
+}
+
+h5{
+    color: blue !important;
+}
+
+
+/* busca a la desendencia y la actualiza */
+main div{
+    color: indigo;
+}
+
+/* busca a sus hijos y los actualiza */
+main > p{
+    font-size: x-large;
+}
+
+/* Herencia de estilo */
+a{
+    color: inherit;
+}

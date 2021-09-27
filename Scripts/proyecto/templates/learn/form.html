@@ -1,0 +1,65 @@
+{% extends "layouts/layout.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="static/css/forms.css">
+{% endblock %}
+{% block title %}   Formularios {{nombre}}   {% endblock %}
+
+{% block content %}
+    <h2 id="h2form">Formularios</h2>
+    <form action="" method="post">
+
+        <h3>Input texto</h3>
+
+        <label for="nombre">Nombre:</label>
+        <input class="input-textos" type="text" placeholder="Escriba algo" name="nombre" accesskey="n" id="nombre"
+            value="Juan Linares" readonly disabled>
+
+        <label>Usuario:
+            <input class="input-textos" type="text" name="usuario" required maxlength="10" minlength="5">
+        </label>
+
+        <label for="texto">Texto:</label>
+        <textarea type='text' onchange="console.log('Cambio el texto')" class="input-textos" name="texto" cols="30"
+            rows="10" id="texto" required></textarea>
+
+        <label>Correo:
+            <input type="email" name="email" required autocomplete="off">
+        </label>
+
+        <h3>Input numerico</h3>
+        <label>Telefono:
+            <input type="number" name="tel" onfocus="console.log('Ingreso al campo de telefono')" required
+                maxlength="10" max="100">
+        </label>
+
+        <h3>Input Contraseña</h3>
+        <label for="pass">Contraseña:</label>
+        <input type="password" name="pass" onblur="console.log('Salio de el campo de pswd')" id="pass" required>
+
+        <h3>Radio Button</h3>
+        <input type="radio" name="grupo" value="29" id="grupo29" required>
+        <label for="grupo29">Grupo 29</label>
+        <br>
+        <input type="radio" name="grupo" value="48" id="grupo48">
+        <label for="grupo48">Grupo 48</label>
+        <br>
+        <input type="radio" name="grupo" value="61" id="grupo61">
+        <label for="grupo61">Grupo 61</label>
+        <br>
+
+        <h3>CheckBox</h3>
+        <input type="checkbox" name="python" tabindex="3" id="python" required>
+        <label for="python">Python</label>
+        <input type="checkbox" name="html" tabindex="1" id="html">
+        <label for="html">Html</label>
+        <input type="checkbox" name="css" tabindex="2" id="css">
+        <label for="css">Css</label>
+
+        <h3>Botones</h3>
+        <button type="submit">Enviar</button>
+        <button type="reset">Reset</button>
+        <button type="button" onclick="alert('Usted hizo click en el boton')">Alert</button>
+
+    </form>
+{% endblock %}
