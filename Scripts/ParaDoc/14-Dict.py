@@ -2,9 +2,9 @@
 miDiccionario = {}
 miDiccionarioConstructor = dict()
 miDiccionarioConstructor = dict(copia=123.23)
-miDiccionario = {"total":55,"descuento":True,"num":"15"}
-
 miDiccionario = {"total":55,"descuento":True,15:"15"}
+
+miDiccionario = {"total":55,"descuento":True,"num":"15"}
 miDiccionarioConstructor = dict(nombre=5+2,telefono=3514647,edad=33,ciudad="Bogota",num="15")
 
 usuario = {
@@ -38,7 +38,7 @@ print(usuario)
 copiausuario = usuario.copy()
 
 #recorrer los diccionarios con un for
-for key, valor in usuario.items():
+for key,valor in usuario.items():
     print(key, valor)
 esle: print('-----------------------')
 

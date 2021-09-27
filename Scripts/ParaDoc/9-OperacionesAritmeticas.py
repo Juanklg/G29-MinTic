@@ -14,6 +14,7 @@ print(f'Resultado multiplicación: {multiplicacion}')
 division = x / y
 print(f'Resultado división: {division}')
 print(type(division))
+print(round(division,3))
 division = x // y
 print(f'Resultado división (int): {division}')
 modulo = x % y

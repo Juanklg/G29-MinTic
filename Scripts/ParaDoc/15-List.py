@@ -1,12 +1,21 @@
 #List
 
+def detailArch(el):
+    print('---------------------------------')
+    print(el)
+    print("len = ",len(el))
+    # for x in range(len(el)):
+    #     print("Pos : "+x+" - Elemento : "+el[x])
+    for x in el:
+        print(f"Elemento : {x}")
+
 def buscarYeliminar(lista,parametro):
     pos = lista.index(parametro)
     lista.pop(pos)
     return lista
 
 #comparacion de estructuras de datos
-lista = ['Juan','Karla','Ricardo', 'María']
+lista = ['Juan','Karla','Ricardo','María']
 tupla = ('Naranja', 'Plátano', 'Guayaba')
 conjunto = {'Marte', 'Júpiter', 'Venus'}
 

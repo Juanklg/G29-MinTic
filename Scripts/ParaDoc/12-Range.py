@@ -1,3 +1,7 @@
+# int, float, str, bool
+# range, dict, list, tuple, set
+
+
 def detailVar(var:any):
     print("El valor es :",var)
     print("Es de tipo :",type(var))

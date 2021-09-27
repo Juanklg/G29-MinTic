@@ -11,3 +11,5 @@ print(primerEspacio)
 #captura el host del correo
 host = data[indexArroba+1:primerEspacio]
 print(host)
+
+print(dir(host))

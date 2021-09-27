@@ -1,4 +1,3 @@
-
 #Asi se ejecuta un while con una variable de un contador 
 #que cambia la condicion de entrada y sale cuando es mayor
 
@@ -8,10 +7,10 @@
 from time import sleep
 
 #Definicion de un while basico
-def WhileBasico(): #disminuyendo    
+def WhileBasico(): #disminuyendo
     n=5
     while n > 0 :
-        sleep(0.5)#tiempo en segundos
+        sleep(2)#tiempo en segundos
         print(n)
         # n=n-1
         n-=1

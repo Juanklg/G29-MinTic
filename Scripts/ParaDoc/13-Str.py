@@ -21,10 +21,10 @@ def ordenAlfabetico(palabra,palabra2):
         print("Su palabra es "+palabra2)
 
 text = "Hola fundamentos de programacion Hola, Grupo 29 Hola"
-detailVar(var)
 #En estas lineas separamos en espacios el texto general con .split()
 splitText = text.split(' ')
-# detailVar(splitText)
+detailVar(splitText)
+
 printIndex(splitText)
 
 #puedo guardar en una nueva variable la informacion de un elemento de la lista
@@ -67,9 +67,9 @@ nv=text.find('a',26,30)
 print(nv)
 
 nv= "Juan         "
-
 print(len(nv))
 nv = len(nv.strip())
+print(nv)
 
 nv=text.startswith('pro')
 print(nv)
@@ -104,12 +104,12 @@ print(varTextoformateada)
 #contador de busqueda
 nv=text
 nv=nv.count("Hola")
-
+print(nv)
 # replace
 nv=text
 nv = nv.replace("Hola","->",2)
+print(nv)
 
-# print(nv)
 # print(text.find("Hola"))
 # printIndex(text)
 #formateador

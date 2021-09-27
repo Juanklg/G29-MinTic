@@ -3,7 +3,7 @@ arreglo = range(10,15)
 print(type(arreglo))
 print(len(arreglo))
 
-for valor in arreglo:    
+for valor in arreglo:
     print(valor)
 else:
     print(f"Imprimio todos los valores")
@@ -32,10 +32,10 @@ def detailVar(var:any):
 
 # Los int no son iterables
 var = 567986
-detailVar(var)
+# detailVar(var)
 #para iterar un int debemos convertirlo con str
 var = 567986
 detailVar(str(var))
 #los str si son iterables
 text = "Hola fundamentos de programacion Hola, Grupo 29 Hola"
-detailVar(var)
+detailVar(text)
