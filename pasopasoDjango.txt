@@ -1,0 +1,22 @@
+- terminal en la ruta del proyecto
+- installar django(solo primera vez)
+pip install django
+conda install django
+
+- comando para crear mi primer proyecto
+django-admin startproject miPrimerProyecto
+
+- comando de migracion para la base de datos
+python manage.py migrate
+
+- comando para iniciar la aplicacion
+python manage.py runserver
+
+- para personalizar la aplicacion creamo un archivo de vistas
+views.py (juntos a al archivo de urls.py)
+- insertamos las funciones que neceste la respectiva vista
+- importamos el elementos de rspuesta http q usa django
+from django.http import HttpResponse
+
+- Actualizamos el archivo url y creamos una nueva entrada
+ej path('saludar/', saludar),
