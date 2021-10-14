@@ -20,3 +20,10 @@ from django.http import HttpResponse
 
 - Actualizamos el archivo url y creamos una nueva entrada
 ej path('saludar/', saludar),
+
+-python manage.py migrate
+
+-python -m pip install django
+-django-admin startproject xxxxxxxxxxxxxxxxx
+-python manage.py runserver
+
