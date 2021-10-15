@@ -20,7 +20,7 @@ def calculo(req,fechaNacimiento,fechaFutura):
 
 def saludar(req):
     diccionario = {"titulo":'Pagina de bienvenida',}
-    doc = open(r'C:\Users\MakeDream\Desktop\Ruta1\G29-MinTic\templates\layout.html')
+    doc = open(r'C:\Users\MakeDream\Desktop\Ruta1\G29-MinTic\templates\layout\layout.html')
     tpl = Template(doc.read())
     doc.close()
     ctx = Context(diccionario)
@@ -33,8 +33,9 @@ def tareas(req):
     tpl = Template(doc.read())
     doc.close()
     ctx = Context({
-        'taskList':taskList,
-        'titulo':'Lista de tareas'
+        'titulo':'Lista de tareas',
+        'nameList':'Tareas Django',
+        'taskList':taskList
     })
     document = tpl.render(ctx)
     return HttpResponse(document)

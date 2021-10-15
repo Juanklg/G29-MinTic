@@ -5,9 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=7">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}
+
+    {% endblock %}
     <title>Document</title>
 </head>
 <body>
+    {% include 'header.html' %}
+    
     <h1>{{titulo}}</h1>
     {% block main %}
 
