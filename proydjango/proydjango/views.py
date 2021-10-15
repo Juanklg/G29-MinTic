@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.template import Template,Context
+from django.template import Template,Context,loader
 import datetime
 
 def calculo(req,fechaNacimiento,fechaFutura):
@@ -19,10 +19,11 @@ def calculo(req,fechaNacimiento,fechaFutura):
     return HttpResponse(document)
 
 def saludar(req):
+    diccionario = {"titulo":'Pagina de bienvenida',}
     doc = open(r'C:\Users\MakeDream\Desktop\Ruta1\G29-MinTic\templates\layout.html')
     tpl = Template(doc.read())
     doc.close()
-    ctx = Context()
+    ctx = Context(diccionario)
     document = tpl.render(ctx)
     return HttpResponse(document)
 
@@ -31,24 +32,19 @@ def tareas(req):
     doc = open(r'C:\Users\MakeDream\Desktop\Ruta1\G29-MinTic\templates\tareas.html')
     tpl = Template(doc.read())
     doc.close()
-    ctx = Context({'taskList':taskList})
+    ctx = Context({
+        'taskList':taskList,
+        'titulo':'Lista de tareas'
+    })
     document = tpl.render(ctx)
     return HttpResponse(document)
 
 def fecha(req):
     fecha = datetime.datetime.now()
-    documento = '''
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>.::Fecha::.</title>
-        </head>
-        <body>
-            <h1>Usted hizo el req en la fecha %s</h1>
-        </body>
-        </html>
-    '''% fecha
+    diccionario = {
+        'titulo':'Pagina de fecha',
+        'fecha':fecha
+    }
+    doc_externor=loader.get_template('intro.html')
+    documento=doc_externor.render(diccionario)
     return HttpResponse(documento)

@@ -1,7 +1,10 @@
-<h1>Mi lista de tareas</h1>
+{% extends "layout.html" %}
 
-<ol>
-    {% for task in taskList %}
-        <li>{{task}}</li>
-    {% endfor %}
-</ol>
+{% block main %}
+    <h2>Tareas Django</h2>
+    <ol>
+        {% for task in taskList %}
+            <li>{{task}}</li>
+        {% endfor %}
+    </ol>    
+{% endblock %}

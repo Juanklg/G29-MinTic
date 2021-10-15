@@ -54,7 +54,7 @@ ROOT_URLCONF = 'proydjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r'C:\Users\MakeDream\Desktop\Ruta1\G29-MinTic\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
