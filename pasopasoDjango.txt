@@ -23,7 +23,10 @@ ej path('saludar/', saludar),
 
 -python manage.py migrate
 
+********************Paso a paso rapido********************
+
 -python -m pip install django
 -django-admin startproject xxxxxxxxxxxxxxxxx
+-ingresar a la carpeta creada
 -python manage.py runserver
 

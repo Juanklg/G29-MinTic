@@ -1,24 +1,25 @@
 <style>
-    .nav{
+    footer{
         background-color: rgb(95, 158, 160,0.37);
         width: 100%;
-        /* flex */
-        display: flex;
-        justify-content: flex-end;
         /* position */
         position: fixed;
-        top: 0%;
+        bottom: 0%;
         /* box model */
-        margin: 0px 0 20px 0;
+        margin: 0px;
         padding: 0px;
         /* Transformaciones */
         text-transform:uppercase;
-    }
-    .nav a{
-        margin: 0px 20px;
+    }footer div{
+        /* box model */
+        margin: 0px;
+        padding: 5px;
+        /* flex */
+        display: flex;
+        justify-content: flex-end;
     }
 </style>
-<header>
+<footer>
     <nav class="nav">
         <a href="/">home</a>
         <a href="/fecha">fecha</a>
@@ -27,4 +28,4 @@
         <a href="/videos">videos</a>
         <a href="/admin">admin</a>
     </nav>
-</header>
+</footer>

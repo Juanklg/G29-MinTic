@@ -49,3 +49,13 @@ def fecha(req):
     doc_externor=loader.get_template('intro.html')
     documento=doc_externor.render(diccionario)
     return HttpResponse(documento)
+
+def videos(req):
+    fecha = datetime.datetime.now()
+    diccionario = {
+        'titulo':'Pagina de videos',
+        'fecha':fecha
+    }
+    doc_externor=loader.get_template('videos.html')
+    documento=doc_externor.render(diccionario)    
+    return HttpResponse(documento)
