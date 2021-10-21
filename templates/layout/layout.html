@@ -8,20 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/global.css">
     {% block head %}
-
     {% endblock %}
 </head>
 
 <body>
     {% include 'layout/header.html' %}
+    
     <main>
         {% include 'layout/aside.html' %}
-        {% block main %}
+        <div class="container">
+            {% block main %}
         
-        {% endblock %}
+            {% endblock %}
+        </div>
     </main>
-    
-
     {% include 'layout/footer.html' %}
 </body>
 

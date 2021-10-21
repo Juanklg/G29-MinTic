@@ -1,19 +1,31 @@
 {% extends "layout/layout.html" %}
 
 {% block head %}
-    <title>***Tareas***</title>
+<title>***Tareas***</title>
 {% endblock %}
 
 {% block main %}
-
-    {% if nameList %}
+    <section>
+        {% if nameList %}
         <h2>{{nameList}}</h2>
-    {% endif %}
+        {% endif %}
 
-    <ol>
-        {% for task in taskList %}
+        <ol>
+            {% for task in taskList %}
             <li>{{task|lower}}</li>
-        {% endfor %}
-    </ol>
-    
+            {% endfor %}
+        </ol>
+    </section>
+    <section>
+        {% if nameList %}
+        <h2>{{nameList}}</h2>
+        {% endif %}
+
+        <ol>
+            {% for task in taskList %}
+            <li>{{task|lower}}</li>
+            {% endfor %}
+        </ol>
+    </section>
+
 {% endblock %}
