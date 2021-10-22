@@ -36,6 +36,8 @@ python manage.py migrate
 ********************Paso a paso para usar terminal interactivo con django********************
 python manage.py shell
 
+from gestor.models import articulo
+
 ***Create***
 art1 = articulo.objects.create(nombre='computador',seccion='tecnologia',precio=100)
 art2 = articulo.objects.create(nombre='celular',seccion='tecnologia',precio=80)
