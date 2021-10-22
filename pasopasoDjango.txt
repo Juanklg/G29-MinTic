@@ -41,11 +41,14 @@ art1 = articulo.objects.create(nombre='computador',seccion='tecnologia',precio=1
 art2 = articulo.objects.create(nombre='celular',seccion='tecnologia',precio=80)
 
 ***Read***
+art3 = articulo.objects.get(id=4)
 
 ***Update***
+art3.precio=102
+art3.save()
 
 ***Delete***
-
+art2.delete()
 
 ********************Paso a paso rapido********************
 -python -m pip install django
