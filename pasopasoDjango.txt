@@ -21,10 +21,33 @@ from django.http import HttpResponse
 - Actualizamos el archivo url y creamos una nueva entrada
 ej path('saludar/', saludar),
 
--python manage.py migrate
+********************Paso a paso configuracion database basico********************
+- crear nueva mini app
+python manage.py startapp gestor
+- crear los modelos dentro de la miniapp (models.py)
+- agregar nombre de la app en lista 'INSTALLED_APPS' dentro de settings
+- Crea el archivo de migracion de django ha base de datos
+python manage.py makemigrations
+- Aplicar las migraciones a la base de datos
+python manage.py sqlmigrate gestor 0001
+- completar la migracion de los modelos
+python manage.py migrate
+
+********************Paso a paso para usar terminal interactivo con django********************
+python manage.py shell
+
+***Create***
+art1 = articulo.objects.create(nombre='computador',seccion='tecnologia',precio=100)
+art2 = articulo.objects.create(nombre='celular',seccion='tecnologia',precio=80)
+
+***Read***
+
+***Update***
+
+***Delete***
+
 
 ********************Paso a paso rapido********************
-
 -python -m pip install django
 -django-admin startproject xxxxxxxxxxxxxxxxx
 -ingresar a la carpeta creada
