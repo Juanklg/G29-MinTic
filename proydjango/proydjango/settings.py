@@ -55,7 +55,8 @@ ROOT_URLCONF = 'proydjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'C:\Users\MakeDream\Desktop\Ruta1\G29-MinTic\templates'],
+        # 'DIRS': [r'C:\Users\MakeDream\Desktop\Ruta1\G29-MinTic\templates'],
+        'DIRS': [r'C:\Users\Juan\Desktop\ruta1\G29-MinTic\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,7 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "static",r"C:\Users\MakeDream\Desktop\Ruta1\G29-MinTic\static"]
+# STATICFILES_DIRS = [BASE_DIR / "static",r"C:\Users\MakeDream\Desktop\Ruta1\G29-MinTic\static"]
+STATICFILES_DIRS = [BASE_DIR / "static",r"C:\Users\Juan\Desktop\ruta1\G29-MinTic\static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

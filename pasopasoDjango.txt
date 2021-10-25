@@ -21,11 +21,15 @@ from django.http import HttpResponse
 - Actualizamos el archivo url y creamos una nueva entrada
 ej path('saludar/', saludar),
 
-********************Paso a paso configuracion database basico********************
+********************Paso a paso creacion miniapp********************
 - crear nueva mini app
 python manage.py startapp gestor
 - crear los modelos dentro de la miniapp (models.py)
 - agregar nombre de la app en lista 'INSTALLED_APPS' dentro de settings
+
+********************Paso a paso migracion de db********************
+Nota: esto se debe ejecutar la primera vez y cada vez que actualice algun modelo
+
 - Crea el archivo de migracion de django ha base de datos
 python manage.py makemigrations
 - Aplicar las migraciones a la base de datos
