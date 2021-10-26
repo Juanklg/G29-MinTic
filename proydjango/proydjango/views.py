@@ -2,6 +2,10 @@ from django.http import HttpResponse
 from django.template import Template,Context,loader
 import datetime
 
+from django.shortcuts import render
+def articulos(req):
+    return render(req,'articulos.html')
+
 def calculo(req,fechaNacimiento,fechaFutura):    
     añoActual = datetime.datetime.now().year
     edadActual = añoActual-fechaNacimiento

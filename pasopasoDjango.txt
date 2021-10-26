@@ -15,11 +15,19 @@ python manage.py runserver
 - para personalizar la aplicacion creamo un archivo de vistas
 views.py (juntos a al archivo de urls.py)
 - insertamos las funciones que neceste la respectiva vista
-- importamos el elementos de rspuesta http q usa django
+- importamos el elementos de respuesta http q usa django
 from django.http import HttpResponse
 
 - Actualizamos el archivo url y creamos una nueva entrada
 ej path('saludar/', saludar),
+********************Paso a paso creacion nueva pagina********************
+-crear el archivo html correspondiente dentro de templates
+-crear la funcion que renderice el template dentro de views.py
+-crear url para nueva pagina dentro del archivo urls.py
+-importar funcion desde views para utilizar en respuesta a la url
+-agrego contenido a mi página copiando el layout de otra pagina que reutilice
+-(opcional) agregar el link de acceso desde nav o el aside
+
 
 ********************Paso a paso creacion miniapp********************
 - crear nueva mini app
