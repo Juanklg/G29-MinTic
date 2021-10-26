@@ -5,7 +5,23 @@
 {% endblock %}
 
 {% block main %}
-    <section>  
-        <h2>aca va el formulario</h2>
+    <section>
+        <form action="/articulosAdd" method="get">
+
+            <label for="nombre">Agregue nombre del articulo:</label>
+            <input type="text" name="nombre" id="nombre">
+            <br>
+
+            <label>Ingrese la seccion de su articulo:
+                <input type="text" name="seccion"></label>
+            <br>
+
+            <label>Ingrese el precio su articulo:
+                <input type="number" name="precio">
+            </label>
+            <br>
+            
+            <input type="submit" value="Agregar">
+        </form>
     </section>
 {% endblock %}

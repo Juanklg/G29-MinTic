@@ -26,4 +26,5 @@ urlpatterns = [
     path('videos/', videos),
     
     path('articulos/', articulos),
+    path('articulosAdd/', articulosAdd),
 ]

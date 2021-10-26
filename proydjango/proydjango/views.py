@@ -3,6 +3,18 @@ from django.template import Template,Context,loader
 import datetime
 
 from django.shortcuts import render
+
+def articulosAdd(req):    
+    nombre = req.GET['nombre']
+    seccion = req.GET['seccion']
+    precio = req.GET['precio']
+    diccionario={
+        'nombre' : nombre,
+        'seccion':seccion,
+        'precio':precio,
+    }
+    return HttpResponse(diccionario)
+
 def articulos(req):
     return render(req,'articulos.html')
 
