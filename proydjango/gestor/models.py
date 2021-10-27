@@ -8,9 +8,14 @@ class cliente(models.Model):
     telefono=models.CharField(max_length=15)
 
 class articulo(models.Model):
-    nombre=models.CharField(max_length=30)
+    nombre=models.CharField(max_length=30,unique=True)
     seccion=models.CharField(max_length=30)
     precio=models.IntegerField()
+
+    def __str__(self):
+        return f'{self.nombre} de la seccion {self.seccion} $ {self.precio}'
+
+
 
 class pedido(models.Model):
     numero=models.IntegerField()

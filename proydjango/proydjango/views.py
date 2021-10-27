@@ -3,6 +3,7 @@ from django.template import Template,Context,loader
 import datetime
 
 from django.shortcuts import render
+from gestor.models import *
 
 def articulosAdd(req):    
     nombre = req.GET['nombre']
@@ -13,10 +14,20 @@ def articulosAdd(req):
         'seccion':seccion,
         'precio':precio,
     }
-    return HttpResponse(diccionario)
+    print(diccionario)
+    art = articulo.objects.create(nombre=nombre,seccion=seccion,precio=precio)
+    print(art)
+    return render(req,'articulos.html')
 
 def articulos(req):
-    return render(req,'articulos.html')
+    articulos = articulo.objects.filter()
+    listArticulos = list(articulos.values())
+    # art = articulo.objects.filter(seccion='tecnologia')
+    # art = articulo.objects.filter(precio__gt=90)
+    diccionario = {
+        'articulos':listArticulos
+    }
+    return render(req,'articulos.html',diccionario)
 
 def calculo(req,fechaNacimiento,fechaFutura):    
     añoActual = datetime.datetime.now().year

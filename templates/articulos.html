@@ -2,11 +2,12 @@
 
 {% block head %}
 <title>***Articulos***</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
 {% endblock %}
 
 {% block main %}
-    <section>
-        <form action="/articulosAdd" method="get">
+    <section class="articulosAdd">
+        <form action="/articulosAdd/" method="get">
 
             <label for="nombre">Agregue nombre del articulo:</label>
             <input type="text" name="nombre" id="nombre">
@@ -23,5 +24,29 @@
             
             <input type="submit" value="Agregar">
         </form>
+    </section>
+    <style>
+        .articulo{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+        }
+    </style>
+    <section class="readArticulos">
+        {% for art in articulos %}
+        <div class="articulo">
+            <div class="nombre">{{art.nombre}}</div>
+            <div class="seccion">{{art.seccion}}</div>
+            <div class="precio">{{art.precio}}</div>
+            <div class="funciones">
+                <a href="delete/{{art.nombre}}/"><i class="bi bi-trash"></i></a>
+                <a href="edit/{{art.nombre}}/"><i class="bi bi-pencil"></i></a>
+
+                
+                
+            </div>
+        </div>
+        {% endfor %}
     </section>
 {% endblock %}
