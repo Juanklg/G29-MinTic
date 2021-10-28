@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.template import Template,Context,loader
 import datetime
 
@@ -14,18 +14,23 @@ def articulosAdd(req):
         'seccion':seccion,
         'precio':precio,
     }
-    print(diccionario)
     art = articulo.objects.create(nombre=nombre,seccion=seccion,precio=precio)
-    print(art)
-    return render(req,'articulos.html')
+    return HttpResponseRedirect('/articulos')
 
 def articulos(req):
-    articulos = articulo.objects.filter()
-    listArticulos = list(articulos.values())
     # art = articulo.objects.filter(seccion='tecnologia')
-    # art = articulo.objects.filter(precio__gt=90)
+    # art = articulo.objects.filter(precio__gt=90)    
+    if(len(req.GET)>=1 and req.GET['articulo']!=''):
+        articulos = articulo.objects.filter(nombre__icontains=req.GET['articulo'])
+    else:
+        articulos = articulo.objects.all()
+    listArticulos = list(articulos.values())
+    conjunto = set()
+    for item in articulos.values():
+        conjunto.add(item['seccion'])
     diccionario = {
-        'articulos':listArticulos
+        'articulos':listArticulos,
+        'secciones':list(conjunto)
     }
     return render(req,'articulos.html',diccionario)
 

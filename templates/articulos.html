@@ -3,50 +3,75 @@
 {% block head %}
 <title>***Articulos***</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+<!-- <link rel="stylesheet" href="/static/css/vapor.min.css"> -->
+<!-- <link rel="stylesheet" href="/static/css/darkly.min.css"> -->
+<link rel="stylesheet" href="/static/css/sketchy.min.css">
 {% endblock %}
 
 {% block main %}
-    <section class="articulosAdd">
-        <form action="/articulosAdd/" method="get">
-
-            <label for="nombre">Agregue nombre del articulo:</label>
-            <input type="text" name="nombre" id="nombre">
-            <br>
-
-            <label>Ingrese la seccion de su articulo:
-                <input type="text" name="seccion"></label>
-            <br>
-
-            <label>Ingrese el precio su articulo:
-                <input type="number" name="precio">
-            </label>
-            <br>
-            
-            <input type="submit" value="Agregar">
-        </form>
-    </section>
-    <style>
-        .articulo{
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-
-        }
-    </style>
-    <section class="readArticulos">
-        {% for art in articulos %}
-        <div class="articulo">
-            <div class="nombre">{{art.nombre}}</div>
-            <div class="seccion">{{art.seccion}}</div>
-            <div class="precio">{{art.precio}}</div>
-            <div class="funciones">
-                <a href="delete/{{art.nombre}}/"><i class="bi bi-trash"></i></a>
-                <a href="edit/{{art.nombre}}/"><i class="bi bi-pencil"></i></a>
-
-                
-                
-            </div>
+<section>
+    <form action="/articulos" method="get">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar en articulos" name='articulo'
+                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-primary" type="submit" id="button-addon2">Search</button>
         </div>
-        {% endfor %}
-    </section>
+    </form>
+</section>
+
+<section class="articulosAdd">
+    <form action="/articulosAdd/" method="get">
+
+        <label for="nombre">Agregue nombre del articulo:</label>
+        <input type="text" name="nombre" id="nombre">
+        <br>
+
+        <label>Ingrese la seccion de su articulo:
+            <input list='secciones' type="text" name="seccion"></label>
+        <datalist id="secciones">
+            {% for sec in secciones %}
+                <option value="{{sec}}">
+            {% endfor %}
+        </datalist>
+        <br>
+
+        <label>Ingrese el precio su articulo:
+            <input type="number" name="precio">
+        </label>
+        <br>
+
+        <input type="submit" value="Agregar">
+    </form>
+</section>
+
+<style>
+    .readArticulos {
+        padding: 30px;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .card {
+        width: 18rem;
+    }
+</style>
+
+<section class="readArticulos">
+    {% for art in articulos %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{art.nombre|upper}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{art.seccion}}</h6>
+            <p class="card-text">{{art.precio}}</p>
+            <a href="delete/{{art.nombre}}/" class="card-link"><i class="bi bi-trash"></i></a>
+            <a href="edit/{{art.nombre}}/" class="card-link"><i class="bi bi-pencil"></i></a>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+
 {% endblock %}
