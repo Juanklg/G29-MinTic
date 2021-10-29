@@ -1,0 +1,12 @@
+.readArticulos {
+    padding: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.card {
+    width: 18rem;
+}
