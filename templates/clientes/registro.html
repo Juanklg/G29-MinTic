@@ -1,0 +1,149 @@
+{% extends "layout/layout.html" %}
+
+{% block head %}
+<title>***Registro***</title>
+<link rel="stylesheet" href="/static/css/clientes.css">
+{% endblock %}
+
+{% block main %}
+<section>   
+    <form action="/clientes" method="get">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar en clientes" name='search'
+                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-primary" type="submit" id="button-addon2">Search</button>
+        </div>
+    </form>
+</section>
+
+<section class="resgistro">    
+    <form class="row g-3 needs-validation" action="/gestor/clientesAdd/" method="post">{% csrf_token %}
+
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="validationCustom01" name="nombre" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Direccion</label>
+            <input type="text" class="form-control" id="validationCustom02" value="Otto" required name="direccion">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationCustomUsername" class="form-label">Username</label>
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="text" class="form-control" id="validationCustomUsername"
+                    aria-describedby="inputGroupPrepend" required name="email">
+                <div class="invalid-feedback">
+                    Please choose a username.
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="col-md-6">
+            <label for="validationCustom03" class="form-label">City</label>
+            <input type="text" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+                Please provide a valid city.
+            </div>
+        </div> -->
+
+        <!-- <div class="col-md-3">
+            <label for="validationCustom04" class="form-label">State</label>
+            <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Choose...</option>
+                <option>...</option>
+            </select>
+            <div class="invalid-feedback">
+                Please select a valid state.
+            </div>
+        </div> -->
+
+        <div class="col-md-3">
+            <label for="validationCustom05" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="validationCustom05" required name="telefono">
+            <div class="invalid-feedback">
+                Please provide a valid zip.
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <label for="validationCustom05" class="form-label">Contraseña</label>
+            <input type="text" class="form-control" id="validationCustom05" required name="password">
+            <div class="invalid-feedback">
+                Please provide a valid password.
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="validationCustom05" class="form-label">Repite Contraseña</label>
+            <input type="text" class="form-control" id="validationCustom05" required name="passwordRep">
+            <div class="invalid-feedback">
+                Please provide a valid password.
+            </div>
+        </div>
+
+        <!-- <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+            </div>
+        </div> -->
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+
+        <label for="nombre">Agregue nombre del articulo:</label>
+        <input type="text" name="nombre" id="nombre" size="30" maxlength="30">
+        <br>
+
+        <label>Ingrese la seccion de su articulo:
+            <input list='secciones' type="text" name="seccion" size="30" maxlength="30"></label>
+        <datalist id="secciones">
+            {% for sec in secciones %}
+            <option value="{{sec}}">
+                {% endfor %}
+        </datalist>
+        <br>
+
+        <label>Ingrese el precio su articulo:
+            <input type="number" name="precio" size="30" maxlength="30">
+        </label>
+        <br>
+
+        <input type="submit" value="Agregar">
+    </form>
+</section>
+<script>
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('is-valid')
+                }, false)
+            })
+    })()
+</script>
+{% endblock %}

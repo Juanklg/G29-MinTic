@@ -1,46 +1,6 @@
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponse
 from django.template import Template,Context,loader
 import datetime
-
-from django.shortcuts import render
-from gestor.models import *
-
-def articulosAdd(req):    
-    nombre = req.GET['nombre']
-    seccion = req.GET['seccion']
-    precio = req.GET['precio']
-    art = articulo.objects.create(nombre=nombre,seccion=seccion,precio=precio)
-    msj=f'{nombre} agregado correctamente'
-    return HttpResponseRedirect(f'/articulos/?msj={msj}')
-
-    
-def articulos(req):
-    msj = ''
-    conjunto = set()
-    print()
-    if len(req.GET)>=1:
-        if 'search' in req.GET.keys():
-            articulos = articulo.objects.filter(seccion__icontains=req.GET['search']) | articulo.objects.filter(nombre__icontains=req.GET['search'])
-        else:
-            articulos = articulo.objects.all()
-
-        if 'msj' in req.GET.keys():
-            msj = req.GET['msj']
-        else:
-            msj = ''
-    else:
-        articulos = articulo.objects.all()
-        # filtro de rango de precio
-    listArticulos = list(articulos.values())
-    for item in articulos.values():
-        conjunto.add(item['seccion'])
-    
-    diccionario = {
-        'articulos':listArticulos,
-        'secciones':conjunto,
-        'alert':{'tipo':'danger','msj':msj}
-    }
-    return render(req,'articulos.html',diccionario)
 
 def calculo(req,fechaNacimiento,fechaFutura):    
     añoActual = datetime.datetime.now().year

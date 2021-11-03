@@ -17,14 +17,13 @@
 </section>
 
 <section class="articulosAdd">
-    <form action="/articulosAdd/" method="get">
-
+    <form action="/articulos/add/" method="post">{% csrf_token %}
         <label for="nombre">Agregue nombre del articulo:</label>
-        <input type="text" name="nombre" id="nombre">
+        <input type="text" name="nombre" id="nombre" size="30" maxlength="30">
         <br>
 
         <label>Ingrese la seccion de su articulo:
-            <input list='secciones' type="text" name="seccion"></label>
+            <input list='secciones' type="text" name="seccion" size="30" maxlength="30"></label>
         <datalist id="secciones">
             {% for sec in secciones %}
                 <option value="{{sec}}">
@@ -33,7 +32,7 @@
         <br>
 
         <label>Ingrese el precio su articulo:
-            <input type="number" name="precio">
+            <input type="number" name="precio" size="30" maxlength="30">
         </label>
         <br>
 
