@@ -7,7 +7,7 @@
 
 {% block main %}
 <section>
-    <form action="/articulos" method="get">
+    <form action="/gestor/articulos" method="get">
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Buscar en articulos" name='search'
                 aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -17,7 +17,7 @@
 </section>
 
 <section class="articulosAdd">
-    <form action="/articulos/add/" method="post">{% csrf_token %}
+    <form action="/gestor/articuloAdd/" method="post">{% csrf_token %}
         <label for="nombre">Agregue nombre del articulo:</label>
         <input type="text" name="nombre" id="nombre" size="30" maxlength="30">
         <br>

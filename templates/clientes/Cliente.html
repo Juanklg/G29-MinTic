@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>***{{model|upper}}***</title>
+<link rel="stylesheet" href="/static/css/clientes.css">
+{% endblock %}
+
+{% block main %}
+<section class="clientesAdd">
+    <form class="row g-3 needs-validation" action="/gestor/clienteAdd/" method="post">{% csrf_token %}
+
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">Nombre</label>
+            <input type="text" id="validationCustom01" name="nombre" required value="{{cliente.nombre}}"
+            {% if 'enombre' in status %}class="form-control is-invalid" {% else %}class="form-control" {% endif %}>
+            <div class="invalid-feedback">
+                {{status.enombre}}
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label is-valid">Direccion</label>
+            <input type="text" id="validationCustom02" value="{{cliente.direccion}}" required name="direccion" 
+            {% if 'edireccion' in status %} class="form-control is-invalid" {% else %}class="form-control" {% endif %}>
+            <div class="invalid-feedback">
+                {{status.edireccion}}
+            </div>            
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationCustomUsername" class="form-label is-valid">Correo</label>
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="email" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required name="email" value="{{cliente.email}}"
+                {% if 'eemail' in status %} class="form-control is-invalid" {% else%}class="form-control" {% endif %}>
+                <div class="invalid-feedback">
+                    {{status.eemail}}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <label for="validationCustom05" class="form-label">Telefono</label>
+            <input type="number" id="validationCustom05" required name="telefono" value="{{cliente.telefono}}"
+            {% if 'etelefono' in status %} class="form-control is-invalid"
+            {% else %}class="form-control"{% endif %}>
+            <div class="invalid-feedback">
+                {{status.etelefono}}
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <label for="validationCustom05" class="form-label">Contraseña</label>
+            <input type="password" id="validationCustom05" required name="password" value="{{cliente.password}}"
+            {% if 'epassword' in status %} class="form-control is-invalid"
+            {% else %}class="form-control"{% endif %}>
+            <div class="invalid-feedback">
+                {{status.epassword}}
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="validationCustom05" class="form-label">Confirma Contraseña</label>
+            <input type="password" id="validationCustom05" required name="passwordRep" value=""
+            {% if 'epasswordRep' in status %} class="form-control is-invalid"
+            {% else %}class="form-control"{% endif %}>
+            <div class="invalid-feedback">
+                {{status.epasswordRep}}
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Registrar</button>
+        </div>
+    </form>
+</section>
+{% endblock %}
