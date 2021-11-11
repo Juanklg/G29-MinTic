@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
+from django.contrib import messages
+# gestor
 from gestor.models import *
+# python 
 import datetime
-
 import pdb  # pdb.set_trace()
 
 def articulosAdd(req):
@@ -22,7 +24,7 @@ def articulos(req):
     print()
     if len(req.GET)>=1:
         if 'search' in req.GET.keys():
-            articulos = Articulo.objects.filter(seccion__icontains=req.GET['search']) | articulo.objects.filter(nombre__icontains=req.GET['search'])
+            articulos = Articulo.objects.filter(seccion__icontains=req.GET['search']) | Articulo.objects.filter(nombre__icontains=req.GET['search'])
         else:
             articulos = Articulo.objects.all()
 
@@ -49,13 +51,13 @@ def valid(nombre,direccion,email,telefono,password,passwordRep):
 
     # Nombre
     if len(nombre)>30 or len(nombre)<3:
-        errorDict['enombre']='Debe tener 10 digitos'
+        errorDict['enombre']='La longitud debe ser mayor a 3 y menor a 30 caracteres'
+
     # direccion
     
     # email
     if len(email)==0:
         errorDict['eemail']='Debe ingresar un correo'
-
     emailBase = Cliente.objects.filter(email=email)
     if not len(emailBase)==0:
         errorDict['eemail']='Correo electronico no esta disponible'
@@ -80,33 +82,36 @@ def valid(nombre,direccion,email,telefono,password,passwordRep):
     return errorDict
 
 def clientes(request):
-    fechaActual = datetime.datetime.now()
     clientes = Cliente.objects.all()
     diccionario = {
-        'fecha':fechaActual,
+        'fecha':datetime.datetime.now(),
         'model':'clientes',
         # 'theme':'Quartz',
         # 'theme':'Sketchy',
         'clientes':clientes.values()
     }
-    return render(request,'Cliente.html',diccionario)
+    return render(request,'clientes/Cliente.html',diccionario)
 
 def clientesAdd(req):    
-    fnombre=req.POST['nombre']
-    fdireccion=req.POST['direccion']
-    femail=req.POST['email']
-    ftelefono=req.POST['telefono']
-    fpassword=req.POST['password']
-    fpasswordRep=req.POST['passwordRep']
-    print(fnombre)
-    pdb.set_trace()
-    status=valid(nombre,direccion,email,telefono,password),
-    msj='Validando'
+    nombre=req.POST['nombre']
+    direccion=req.POST['direccion']
+    email=req.POST['email']
+    telefono=req.POST['telefono']
+    password=req.POST['password']
+    passwordRep=req.POST['passwordRep']
+    
+    # ejecuta funcion de validacion y retora un diccionario con los errores
+    status=valid(nombre,direccion,email,telefono,password,passwordRep)
+    if len(status)>0:
+        # Si hay errores envia mensaje y crea diccionarios de respuesta
+        diccionario = {'status':status,
+            'cliente':{'nombre':nombre,'direccion':direccion,'email':email,'telefono':telefono,'password':password}
+        }
+        messages.error(req, 'Error en formularios de registro')
+        return render(req,'clientes/Cliente.html',diccionario)
+    else:
+        cliente = Cliente.objects.create(nombre=nombre,direccion=direccion,email=email,telefono=telefono,password=password)
+        messages.success(req, f'Cliente {nombre} registrado con exito')
+        return redirect('/gestor/clientes')
 
-    # if len(nombre)>=30:
-    #     msj=f'el nombre del producto tiene una logintud superior a 30, {len(nombre)}'
-    # else:
-    #     # art = articulo.objects.create(nombre=nombre,seccion=seccion,precio=precio)
-    #     msj=f'el articulo {nombre} se agrego de forma exitosa, {len(nombre)}'
-    return HttpResponseRedirect(f'/clientes/?msj={msj}')
 

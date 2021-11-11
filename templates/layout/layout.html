@@ -18,14 +18,19 @@
 </head>
 
 <body>
-    
     {% include 'layout/bootstrap/modal.html' %}
-    {% include 'layout/header.html' %}
+
+    {% if user.is_authenticated %}
+        {% include 'layout/headerHome.html' %}
+    {% else %}
+        {% include 'layout/header.html' %}
+    {% endif %}
+    
     
     <main>
         {% include 'layout/aside.html' %}
         <div class="container">
-            {% include 'layout/bootstrap/alerts.html' %}
+            {% include 'layout/bootstrap/messages.html' %}
             {% block main %}
         
             {% endblock %}

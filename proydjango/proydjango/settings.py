@@ -76,11 +76,27 @@ WSGI_APPLICATION = 'proydjango.wsgi.application'
 
 BASE_SQLITE = "C:/Users/MakeDream/Dropbox/Docs/sqlite/"
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'postgres',
+    #     'USER':'postgres',
+    #     'PASSWORD':'secure_pass_here',
+    #     'HOST':'127.0.0.1',
+    #     'DATABASE_PORT':'5432',
+    # },
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_SQLITE + 'G29.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbjk3chanum0sj',
+        'USER':'mthudtjcirbnjh',
+        'PASSWORD':'6d9830ead6916cc0cc80a2e394a26756881ed0a0498d0d7e40b6931a726ac768',
+        'HOST':'ec2-23-23-181-251.compute-1.amazonaws.com',
+        'DATABASE_PORT':'5432',
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_SQLITE + 'G29.sqlite3',
+    #     # 'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 
@@ -123,6 +139,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static",r"C:\Users\MakeDream\Desktop\Ruta1\G29-MinTic\static"]
 # STATICFILES_DIRS = [BASE_DIR / "static",r"C:\Users\Juan\Desktop\ruta1\G29-MinTic\static"]
+
+MEDIA_ROOT = BASE_DIR/'media'
+MEDIA_URL = '/media/'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = LOGIN_URL
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

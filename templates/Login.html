@@ -1,0 +1,13 @@
+{% extends "layout/layout.html" %}
+
+{% block head %}
+<!-- <link rel="stylesheet" href="/static/css/r.css"> -->
+{% endblock %}
+
+{% block main %}
+    <form action="/login/" method="post">{% csrf_token %}
+        {{formulario.as_p}}
+        <input type="reset" value="Borrar">
+        <input type="submit" value="Enviar">
+    </form>
+{% endblock %}
